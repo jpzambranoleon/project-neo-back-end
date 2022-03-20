@@ -5,7 +5,6 @@ const { checkDuplicateEmail } = require("../middlewares/signup.middleware");
 
 router.post("/signup", [checkDuplicateEmail], AuthController.Signup);
 router.post("/login", AuthController.Login);
-router.post("/activate", AuthController.Activate);
 router.patch("/forgot", AuthController.ForgotPassword);
 router.patch("/reset", AuthController.ResetPassword);
 

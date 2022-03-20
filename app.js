@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use("/users", require("./routes/user.routes"));
+app.use("/auth", require("./routes/user.routes"));
 
 app.listen(process.env.PORT, () => {
   console.log("Server started listening on PORT : " + process.env.PORT);
