@@ -4,9 +4,15 @@ const bcrypt = require("bcryptjs");
 
 const userSchema = new Schema(
   {
-    email: { type: String, required: true, unique: true },
-    active: { type: Boolean, default: false },
-    password: { type: String, required: true },
+    userName: { type: String, required: true, min:3, max:10, unique: true},
+    email: { type: String, max: 50, required: true, unique: true },
+    // active: { type: Boolean, default: false },
+    password: { type: String, required: true, min: 6},
+    profilePicture: { type: String, default: "" },
+    coverPicture: { type: String, default: "" },
+    followers: { type: Array, default: [] },
+    following: { type: Array, default: [] },
+    isAdmin: { type: Boolean, default: false },
     resetPasswordToken: { type: String, default: null },
     resetPasswordExpires: { type: Date, default: null },
     emailToken: { type: String, default: null },

@@ -10,6 +10,7 @@ exports.Signup = async (req, res) => {
     console.log(req.body);
     if (!req.body.email) throw new Error("Cannot signup without email");
     if (!req.body.firstName || !req.body.lastName) throw new Error("Cannot signup without first name and last name");
+    if (!req.body.userName) throw new Error("Cannot signup without username");
 
     const hash = await User.hashPassword(req.body.password);
     req.body.password = hash;
